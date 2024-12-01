@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import './Banner.css'
 
 function Banner() {
