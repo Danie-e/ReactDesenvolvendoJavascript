@@ -1,11 +1,13 @@
 .Colaborador {
+    position: relative;
     width: 280px;
 }
 
 .Colaborador .Cabecalho {
-    background-color:  #F0F0F0;
+    background-color: #F0F0F0;
     border-radius: 10px 10px 0px 0px;
 }
+
 .Colaborador img {
     width: 100px;
     border-radius: 50%;
@@ -34,4 +36,10 @@
     line-height: 22px;
     color: #212121;
     padding: 0 16px;
+}
+
+.Deletar {
+    position: absolute;
+    right: -10px;
+    top: -10px
 }
