@@ -3,6 +3,8 @@ import Botao from '../Botao';
 import CampoTexto from '../CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
 import './Formulario.css';
+import { v4 as uuidv4 } from 'uuid';
+
 
 const Formulario = (props) => {
 
@@ -17,7 +19,8 @@ const Formulario = (props) => {
             Nome: nome,
             Cargo: cargo,
             Imagem: imagem,
-            Time: time
+            Time: time,
+            Id: uuidv4()
         });
         setNome('');
         setCargo('');
