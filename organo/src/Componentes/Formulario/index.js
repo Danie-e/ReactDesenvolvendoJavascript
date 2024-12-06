@@ -6,16 +6,18 @@ import './Formulario.css';
 import { v4 as uuidv4 } from 'uuid';
 
 
-const Formulario = (props) => {
+const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }) => {
 
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
     const [time, setTime] = useState('');
+    const [nomeTime, setNomeTime] = useState('');
+    const [corTime, setCorTime] = useState('');
 
     const aoSalvar = (event) => {
         event.preventDefault();
-        props.aoColaboradorCadastrado({
+        aoColaboradorCadastrado({
             Nome: nome,
             Cargo: cargo,
             Imagem: imagem,
@@ -53,11 +55,32 @@ const Formulario = (props) => {
                 />
                 <ListaSuspensa
                     label="Time"
-                    itens={props.times}
+                    itens={times}
                     valor={time}
                     aoAlterado={valor => setTime(valor)}
                 />
                 <Botao>Criar card</Botao>
+            </form>
+            <form onSubmit={(evento) => {
+                evento.preventDefault();
+                cadastrarTime({ nome: nomeTime, cor: corTime })
+            }}>
+                <h2>Preencha o formulario para adicionar novos times</h2>
+                <CampoTexto
+                    obrigatorio
+                    label="Nome"
+                    placeholder="Digite o nome do time."
+                    valor={nomeTime}
+                    aoAlterado={valor => setNomeTime(valor)}
+                />
+                <CampoTexto
+                    obrigatorio
+                    label="Cor"
+                    placeholder="Digite a cor do time"
+                    valor={corTime}
+                    aoAlterado={valor => setCorTime(valor)}
+                />
+                <Botao>Criar novo time</Botao>
             </form>
         </section>
     );
