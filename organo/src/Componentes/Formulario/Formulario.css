@@ -1,11 +1,13 @@
 .Formulario {
     display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
     justify-content: center;
-    margin: 80px 0;
+    margin: 80px 50px;
 }
 
 .Formulario form {
-    max-width: 80%;
+    flex: 1;
     background-color: #F2F2F2;
     border-radius: 20px;
     padding: 36px 64px;
